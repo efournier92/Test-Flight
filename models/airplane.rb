@@ -1,8 +1,8 @@
-require 'Pry'
-
 class Airplane
   attr_reader :type, :wing_loading, :horsepower, :start, :flying
   attr_accessor :fuel
+
+  LOW = "You don't have enough fuel"
 
   def initialize(type, wing_loading, horsepower)
     @type = type
@@ -14,18 +14,20 @@ class Airplane
   end
 
   def start
-    if check_fuel(10) != false
-      if @start == false
-        @start = true
-      elsif @start == true
-        "Engine is already running"
-      end
+    if check_fuel(10) == false
+      LOW
+    elsif @start == false
+      @start = true
+    else
+      'Engine is already running'
     end
   end
 
   def takeoff
-    if @start == false
-      "Engine must be on for takeoff"
+    if check_fuel(10) == false
+      LOW
+    elsif @start == false
+      'Engine must be on for takeoff'
     else
       @fuel -= 20
       @flying = true
@@ -33,22 +35,23 @@ class Airplane
   end
 
   def land
-    if @flying == false
+    if check_fuel(10) == false
+      LOW
+    elsif @flying == false
       "You can't land a plane that's on the ground!"
     else
       @fuel -= 10
       @flying = false
-      "The plane landed safely"
+      'The plane landed safely'
     end
   end
 
   def check_fuel(fuel_used)
     fuel_left = @fuel - fuel_used
     if fuel_left <= 0
-      puts "You don't have enough fuel"
       false
     else
-      @fuel = fuel_left
+      true
     end
   end
 end
