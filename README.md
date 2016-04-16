@@ -21,6 +21,6 @@ The `Airplane` class has methods and unit tests for the following:
 3. `#takeoff` changes plane's state to flying. The plane can only take off if the engine is already running. Returns whether or not the plane has taken off.
 4. `#land` changes plane's state to landed. The plane can only land if it is currently flying. Returns whether or not the plane landed successfully.
 5. `#check_fuel` returns `true` or `false` based on whether the plane has enough fuel to perform the requested action.
-..* `#start` consumes 10 gallons of fuel
-..* `#takeoff` consumes 20 gallons of fuel
-..* `#land` consumes 10 gallons of fuel
+⋅⋅* `#start` consumes 10 gallons of fuel
+⋅⋅* `#takeoff` consumes 20 gallons of fuel
+⋅⋅* `#land` consumes 10 gallons of fuel
