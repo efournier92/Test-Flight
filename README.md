@@ -23,4 +23,4 @@ The `Airplane` class has methods and unit tests for the following:
 5. `#check_fuel` returns `true` or `false` based on whether the plane has enough fuel to perform the requested action.
 * `#start` consumes 10 gallons of fuel
 * `#takeoff` consumes 20 gallons of fuel
-* `land` consumes 10 gallons of fuel
+* `#land` consumes 10 gallons of fuel
