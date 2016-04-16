@@ -1,5 +1,5 @@
 require_relative '../../models/airplane'
-require 'pry'
+
 describe Airplane do
 
   let(:airplane) { Airplane.new('Boeing', 10, 150) }
